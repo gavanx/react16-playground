@@ -16,6 +16,7 @@ const modules =
     './hooks/Ref',
     './hooks/Ref2',
     './hooks/useImperativeHandle',
+    './hooks/LayoutEffect',
   ].map(m => {
     return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
   })
