@@ -15,6 +15,7 @@ const modules =
     './hooks/Callback',
     './hooks/Ref',
     './hooks/Ref2',
+    './hooks/useImperativeHandle',
   ].map(m => {
     return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
   })
