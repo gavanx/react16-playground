@@ -11,6 +11,8 @@ const modules =
     './hooks/State',
     './hooks/Effect',
     './hooks/Context',
+    './hooks/Memo',
+    './hooks/Callback',
   ].map(m => {
     return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
   })
