@@ -3,7 +3,6 @@
  */
 import React from 'react'
 import Loadable from 'react-loadable'
-import Effect2 from './hooks/Effect2'
 
 const LoadingComponent = () => <div>loading</div>
 
@@ -11,6 +10,7 @@ const modules =
   [
     './hooks/State',
     './hooks/Effect',
+    './hooks/Effect2',
     './hooks/Context',
     './hooks/Memo',
     './hooks/Callback',
@@ -19,6 +19,7 @@ const modules =
     './hooks/useImperativeHandle',
     './hooks/LayoutEffect',
     './hooks/DebugValue',
+    './hooks/useFriendStatus',
   ].map(m => {
     return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
   })
@@ -27,6 +28,5 @@ export default props => {
   return <div>
     <h2>Demo:</h2>
     {modules.map((Module, i) => <Module key={i} />)}
-    <Effect2 />
   </div>
 }
