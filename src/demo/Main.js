@@ -3,7 +3,6 @@
  */
 import React from 'react'
 import Loadable from 'react-loadable'
-import State from './hooks/State'
 
 const LoadingComponent = () => <div>loading</div>
 
@@ -11,6 +10,7 @@ const modules =
   [
     './hooks/State',
     './hooks/Effect',
+    './hooks/Context',
   ].map(m => {
     return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
   })

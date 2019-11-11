@@ -10,6 +10,9 @@ export default props => {
   const [count, setCount] = useState(100)
   useEffect(() => {
     document.title = `Clicked ${count} times`
+    return () => {
+      console.log('unmount hook')
+    }
   })
 
   return (
