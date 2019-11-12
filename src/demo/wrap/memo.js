@@ -62,4 +62,19 @@ function Child3x({ seconds }) {
     <div>{displayName} React.memo: I am update every {seconds} seconds</div>
   )
 };
-const Child3 = React.memo(Child3x)
+
+function areEqual(prevProps, nextProps) {
+  if (prevProps.seconds === nextProps.seconds) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function areEqual2(prevProps, nextProps) {
+  return prevProps.seconds === nextProps.seconds
+
+}
+
+const Child3 = React.memo(Child3x, areEqual)
+// const Child3 = React.memo(Child3x)
