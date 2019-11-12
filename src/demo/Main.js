@@ -20,6 +20,7 @@ const modules =
     './hooks/LayoutEffect',
     './hooks/DebugValue',
     './hooks/useFriendStatus',
+    './wrap/memo',
   ].map(m => {
     return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
   })
