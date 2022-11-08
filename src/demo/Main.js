@@ -1,36 +1,44 @@
 /**
  * Created by gavan(guoming3@xiaomi.com) on 2019-11-11.
  */
-import React from 'react'
-import Loadable from 'react-loadable'
-import AutoBatchUpdate from './AutoBatchUpdate'
+import React from "react";
+import Loadable from "react-loadable";
+import AutoBatchUpdate from "./AutoBatchUpdate";
+import Callback2 from "./hooks/Callback2";
+import MemoCallback from "./hooks/MemoCallback";
 
-const LoadingComponent = () => <div>loading</div>
+const LoadingComponent = () => <div>loading</div>;
 
-const modules =
-  [
-    './hooks/State',
-    './hooks/Effect',
-    './hooks/Effect2',
-    './hooks/Context',
-    './hooks/CounterTimeout',
-    './hooks/Memo',
-    './hooks/Callback',
-    './hooks/Ref',
-    './hooks/Ref2',
-    './hooks/useImperativeHandle',
-    './hooks/LayoutEffect',
-    './hooks/DebugValue',
-    './hooks/useFriendStatus',
-    './wrap/memo',
-  ].map(m => {
-    return Loadable({ loader: () => import(m + '.js'), loading: LoadingComponent })
-  })
+const modules = [
+  "./hooks/State",
+  "./hooks/Effect",
+  "./hooks/Effect2",
+  "./hooks/Context",
+  "./hooks/CounterTimeout",
+  "./hooks/Memo",
+  "./hooks/Callback",
+  "./hooks/Ref",
+  "./hooks/Ref2",
+  "./hooks/useImperativeHandle",
+  "./hooks/LayoutEffect",
+  "./hooks/LayoutEffect2",
+  "./hooks/DebugValue",
+  "./hooks/useFriendStatus",
+  "./wrap/memo",
+].map((m) => {
+  return Loadable({
+    loader: () => import(m + ".js"),
+    loading: LoadingComponent,
+  });
+});
 
-export default props => {
-  return <div>
-    <h2>Demo:</h2>
-    <AutoBatchUpdate/>
-    {modules.map((Module, i) => <Module key={i} />)}
-  </div>
-}
+export default (props) => {
+  return (
+    <div>
+      <h2>Demo:</h2>
+      <Callback2 />
+      {/* <AutoBatchUpdate/> */}
+      {/* {modules.map((Module, i) => <Module key={i} />)} */}
+    </div>
+  );
+};
