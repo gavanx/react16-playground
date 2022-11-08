@@ -4,8 +4,7 @@
 import React from "react";
 import Loadable from "react-loadable";
 import AutoBatchUpdate from "./AutoBatchUpdate";
-import Callback2 from "./hooks/Callback2";
-import MemoCallback from "./hooks/MemoCallback";
+import RefOnScroll from "./hooks/RefOnScroll";
 
 const LoadingComponent = () => <div>loading</div>;
 
@@ -36,7 +35,7 @@ export default (props) => {
   return (
     <div>
       <h2>Demo:</h2>
-      <Callback2 />
+      <RefOnScroll />
       {/* <AutoBatchUpdate/> */}
       {/* {modules.map((Module, i) => <Module key={i} />)} */}
     </div>
