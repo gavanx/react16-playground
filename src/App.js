@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Main from './demo/Main'
+import MainDemo from './demo/MainDemo'
 
 function App() {
   return (
     <div>
-      <Main />
+      <MainDemo />
     </div>
   );
 }
